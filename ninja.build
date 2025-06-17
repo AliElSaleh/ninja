@@ -5,7 +5,7 @@ if windows
 }
 else
 {
-    Compiler.Flags -Wno-deprecated
+    Compiler.Flags -std=c++11 -Wno-deprecated
 }
 
 if windows
