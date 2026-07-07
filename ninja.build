@@ -10,11 +10,11 @@ else
 
 if windows
 {
-    Defines _CRT_SECURE_NO_WARNINGS
+    Compiler.Defines _CRT_SECURE_NO_WARNINGS
 
-    Defines NOMINMAX  # windows.h defines min() and max() which conflict with std::min()
-                      # and std::max(), which both might be used in sources. Avoid compile
-                      # errors by telling windows.h to not define those two.
+    Compiler.Defines NOMINMAX  # windows.h defines min() and max() which conflict with std::min()
+                               # and std::max(), which both might be used in sources. Avoid compile
+                               # errors by telling windows.h to not define those two.
 }
 
 Type:lib static_lib
@@ -88,7 +88,4 @@ SourceFiles:!lib $CoreFiles src/ninja.cc
     To build the ninja library, just run: riftbuild lib
 }
 
-option.lib
-{
-    description Build the ninja library
-}
+option.lib Build the ninja library
