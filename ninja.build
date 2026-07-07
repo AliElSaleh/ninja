@@ -20,8 +20,12 @@ if windows
 Type:lib static_lib
 
 SourceDirectory       src
-BuildDirectory        bin/%%lib
-IntermediateDirectory bin-int/%%lib
+
+IntSubDirectory:lib   lib
+IntSubDirectory:!lib  app
+
+BuildDirectory        bin/$IntSubDirectory
+IntermediateDirectory bin-int/$IntSubDirectory
 
 CoreFiles
 [
